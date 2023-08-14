@@ -1,3 +1,4 @@
+using ContactBookWebApp.Application;
 using ContactBookWebApp.Extensions;
 using ContactBookWebApp.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.ConfigureDataBaseContext(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(MapInitializers));
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
+builder.Services.ResolveDependencyInjection();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
