@@ -33,7 +33,7 @@ namespace ContactBookWebApp.Application.Services.Implementations
             var user = _mapper.Map<UserEntity>(userRequestDto);
             user.UserName = user.Email;
 
-            var result = await _userManager.CreateAsync(user);
+            var result = await _userManager.CreateAsync(user, userRequestDto.Role);
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, userRequestDto.Role);

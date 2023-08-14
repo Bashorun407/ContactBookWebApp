@@ -27,7 +27,7 @@ namespace ContactBookWebApp.Extensions
         {
             var builder = services.AddIdentity<UserEntity, IdentityRole>(o =>
             {
-                o.Password.RequireDigit = true;
+                o.Password.RequireDigit = false;
                 o.Password.RequireLowercase = false;
                 o.Password.RequireUppercase = false;
                 o.Password.RequireNonAlphanumeric = false;
