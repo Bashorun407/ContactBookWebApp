@@ -11,6 +11,7 @@ namespace ContactBookWebApp.Application.Services.Interfaces
     public interface IAuthenticationService
     {
         Task<IdentityResult> RegisterUser(UserRequestDto userRequestDto);
-
+        Task<bool> ValidateUser(UserLoginDto userForAuth);
+        Task<string> CreateToken();
     }
 }

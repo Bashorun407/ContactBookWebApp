@@ -47,11 +47,16 @@ namespace ContactBookWebApp.Controllers
             return StatusCode(201);
         }
 
-     /*   [HttpPost]
-        public Task<IActionResult> LoginUser([FromBody] UserRequestDto requestDto)
+        [HttpPost]
+        public async Task<IActionResult> LoginUser([FromBody] UserLoginDto requestDto)
         {
+            if(!await _authenticationService.ValidateUser(requestDto))
+            {
+                return Unauthorized();
+            }
 
-        }*/
+            return Ok(new {token = await _authenticationService.CreateToken()});
+        }
 
         /*     // PUT api/<AuthenticationController>/5
              [HttpPut("{id}")]

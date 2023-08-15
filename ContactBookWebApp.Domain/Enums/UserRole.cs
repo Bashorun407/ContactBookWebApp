@@ -8,6 +8,6 @@ namespace ContactBookWebApp.Domain.Enums
 {
     public enum UserRole
     {
-        User = 1, Admin
+       Admin, Regular
     }
 }
