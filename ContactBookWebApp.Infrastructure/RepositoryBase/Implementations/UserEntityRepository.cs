@@ -1,6 +1,9 @@
 ﻿using ContactBookWebApp.Domain.Entities;
 using ContactBookWebApp.Infrastructure.Persistence;
 using ContactBookWebApp.Infrastructure.RepositoryBase.Abstractions;
+using ContactWebApp.Shared.RequestParameter.Common;
+using ContactWebApp.Shared.RequestParameter.ModelParameters;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +14,31 @@ namespace ContactBookWebApp.Infrastructure.RepositoryBase.Implementations
 {
     public class UserEntityRepository : Repository<UserEntity>, IUserEntityRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly DbSet<UserEntity> _context;
 
         public UserEntityRepository(ApplicationDbContext context) : base(context) 
         {
-            _context = context;
+            _context = context.Set<UserEntity>();
+        }
+
+        public async Task<PagedList<UserEntity>> GetAllUsers(UserRequestInputParameter parameter)
+        {
+            var result = await _context.Skip((parameter.PageNumber - 1) * parameter.PageSize).Take(parameter.PageSize)
+                .ToListAsync();
+
+            var count = await _context.CountAsync();
+
+            return new PagedList<UserEntity>(result, count, parameter.PageNumber, parameter.PageSize);
+        }
+
+        public async Task<UserEntity> GetUserByEmail(string email)
+        {
+            return await _context.Where(c => c.Email.Contains(email, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefaultAsync();
+        }
+
+        public async Task<UserEntity> GetUserById(string id)
+        {
+            return await _context.FindAsync(id);
         }
     }
 }

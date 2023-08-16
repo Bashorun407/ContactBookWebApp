@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ContactBookWebApp.Domain\ContactBookWebApp.Domain.csproj" />
+    <ProjectReference Include="..\ContactWebApp.Shared\ContactWebApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -41,7 +41,7 @@ namespace ContactBookWebApp.Extensions
             .AddDefaultTokenProviders();
         }
 
-        /*public static void ConfigureJWT(this IServiceCollection services, IConfiguration
+        public static void ConfigureJWT(this IServiceCollection services, IConfiguration
 configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
@@ -65,6 +65,6 @@ configuration)
     SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                 };
             });
-        }*/
+        }
     }
 }

@@ -10,8 +10,8 @@ namespace ContactBookWebApp.Application.Services.Interfaces
 {
     public interface IAuthenticationService
     {
-        Task<IdentityResult> RegisterUser(UserRequestDto userRequestDto);
-        Task<bool> ValidateUser(UserLoginDto userForAuth);
+        Task<IdentityResult> RegisterUser(UserRequestDto userRequestDto, string role);
+        Task<bool> ValidateUser(UserLoginDto userLoginDto);
         Task<string> CreateToken();
     }
 }

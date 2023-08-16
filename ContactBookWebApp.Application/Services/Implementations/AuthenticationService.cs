@@ -33,15 +33,15 @@ namespace ContactBookWebApp.Application.Services.Implementations
             _config = config;
         }
 
-        public async Task<IdentityResult> RegisterUser(UserRequestDto userRequestDto)
+        public async Task<IdentityResult> RegisterUser(UserRequestDto userRequestDto, string role)
         {
             var user = _mapper.Map<UserEntity>(userRequestDto);
             user.UserName = user.Email;
 
-            var result = await _userManager.CreateAsync(user);
+            var result = await _userManager.CreateAsync(user, userRequestDto.Password);
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, UserRole.Regular.ToString());
+                await _userManager.AddToRoleAsync(user, role);
             }
             return result;
         }

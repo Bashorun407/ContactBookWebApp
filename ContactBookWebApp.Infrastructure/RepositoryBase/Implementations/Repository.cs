@@ -12,26 +12,41 @@ namespace ContactBookWebApp.Infrastructure.RepositoryBase.Implementations
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
-        protected ApplicationDbContext _context;
+        protected DbSet<T> _context;
 
         public Repository(ApplicationDbContext context)
         {
-            _context = context;
+            _context = context.Set<T>();
         }
 
-        public void Create(T entity) => _context.Set<T>().Add(entity);
+        public void Create(T entity) => _context.Add(entity);
 
-        public void Delete(T entity) => _context.Set<T>().Remove(entity);
+        public async Task CreateAsync(T entity)
+        {
+            await _context.AddAsync(entity);
+        }
+
+        public async Task CreateRangeAsync(IEnumerable<T> entities)
+        {
+            await _context.AddRangeAsync(entities);
+        }
+
+        public void Delete(T entity) => _context.Remove(entity);
 
         public IQueryable<T> FindAll(bool trackChanges) => !trackChanges ?
-            _context.Set<T>().AsNoTracking():
-            _context.Set<T>();
+            _context.AsNoTracking():
+            _context;
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges) => !trackChanges ?
-            _context.Set<T>().Where(expression).AsNoTracking() :
-            _context.Set<T>().Where(expression);
+            _context.Where(expression).AsNoTracking() :
+            _context.Where(expression);
 
+        public void RemoveRange(IEnumerable<T> entities)
+        {
+            _context.RemoveRange(entities);
 
-        public void Update(T entity) => _context.Set<T>().Update(entity);
+        }
+
+        public void Update(T entity) => _context.Update(entity);
     }
 }

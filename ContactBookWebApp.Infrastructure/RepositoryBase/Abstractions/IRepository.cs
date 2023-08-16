@@ -12,7 +12,10 @@ namespace ContactBookWebApp.Infrastructure.RepositoryBase.Abstractions
         IQueryable<T> FindAll(bool trackChanges);
         IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges);
         void Create(T entity);
+        Task CreateAsync(T entity);
+        Task CreateRangeAsync(IEnumerable<T> entities);
         void Update(T entity);
         void Delete(T entity);
+        void RemoveRange(IEnumerable<T> entities);
     }
 }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookWebApp", "ContactBookWebApp\ContactBookWebApp.csproj", "{4842C78C-E78B-4184-A846-3BC90EDE9F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookWebApp", "ContactBookWebApp\ContactBookWebApp.csproj", "{4842C78C-E78B-4184-A846-3BC90EDE9F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookWebApp.Domain", "ContactBookWebApp.Domain\ContactBookWebApp.Domain.csproj", "{0A40C60E-C86A-4381-BB2A-CD4333EDD658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookWebApp.Domain", "ContactBookWebApp.Domain\ContactBookWebApp.Domain.csproj", "{0A40C60E-C86A-4381-BB2A-CD4333EDD658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookWebApp.Infrastructure", "ContactBookWebApp.Infrastructure\ContactBookWebApp.Infrastructure.csproj", "{F1F5142D-701B-418C-9542-92271A81A06D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookWebApp.Infrastructure", "ContactBookWebApp.Infrastructure\ContactBookWebApp.Infrastructure.csproj", "{F1F5142D-701B-418C-9542-92271A81A06D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookWebApp.Application", "ContactBookWebApp.Application\ContactBookWebApp.Application.csproj", "{89847A15-FA20-4207-BA09-2298A5CD3A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookWebApp.Application", "ContactBookWebApp.Application\ContactBookWebApp.Application.csproj", "{89847A15-FA20-4207-BA09-2298A5CD3A3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookWebApp.Test", "ContactBookWebApp.Test\ContactBookWebApp.Test.csproj", "{1134786D-46F9-40F4-9419-166BEE1A9F70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookWebApp.Test", "ContactBookWebApp.Test\ContactBookWebApp.Test.csproj", "{1134786D-46F9-40F4-9419-166BEE1A9F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactWebApp.Shared", "ContactWebApp.Shared\ContactWebApp.Shared.csproj", "{7D4885F9-45A0-4EDB-A74E-801166C3ABA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1134786D-46F9-40F4-9419-166BEE1A9F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1134786D-46F9-40F4-9419-166BEE1A9F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1134786D-46F9-40F4-9419-166BEE1A9F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4885F9-45A0-4EDB-A74E-801166C3ABA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4885F9-45A0-4EDB-A74E-801166C3ABA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4885F9-45A0-4EDB-A74E-801166C3ABA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4885F9-45A0-4EDB-A74E-801166C3ABA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
