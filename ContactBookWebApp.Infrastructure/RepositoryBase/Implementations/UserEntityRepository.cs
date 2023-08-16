@@ -23,7 +23,11 @@ namespace ContactBookWebApp.Infrastructure.RepositoryBase.Implementations
 
         public async Task<PagedList<UserEntity>> GetAllUsers(UserRequestInputParameter parameter)
         {
-            var result = await _context.Skip((parameter.PageNumber - 1) * parameter.PageSize).Take(parameter.PageSize)
+            var result = await _context.Where(u=> u.FirstName.ToLower()
+            .Contains(parameter.SearchTerm, StringComparison.InvariantCultureIgnoreCase) 
+            || u.LastName.ToLower().Contains(parameter.SearchTerm, StringComparison.InvariantCultureIgnoreCase)
+            || u.Email.ToLower().Contains(parameter.SearchTerm, StringComparison.InvariantCultureIgnoreCase))
+                .Skip((parameter.PageNumber - 1) * parameter.PageSize).Take(parameter.PageSize)
                 .ToListAsync();
 
             var count = await _context.CountAsync();

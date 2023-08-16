@@ -19,5 +19,6 @@ namespace ContactWebApp.Shared.RequestParameter.Common
         }
 
         public int PageNumber { get; set; } = 1;
+        public string SearchTerm { get; set; }
     }
 }

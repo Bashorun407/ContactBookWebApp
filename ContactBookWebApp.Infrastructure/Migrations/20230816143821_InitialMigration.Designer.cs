@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContactBookWebApp.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230816124445_WedMigration")]
-    partial class WedMigration
+    [Migration("20230816143821_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -176,13 +176,13 @@ namespace ContactBookWebApp.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3291ce57-a3a8-432a-8961-ea681be136fc",
+                            Id = "89865116-9de3-41b2-aa2b-b031ff1f7239",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "12c391e8-aefc-4790-9ff6-952cb597e5fe",
+                            Id = "9dd0eafb-5e05-4452-91ea-5093e16f08ce",
                             Name = "User",
                             NormalizedName = "USER"
                         });

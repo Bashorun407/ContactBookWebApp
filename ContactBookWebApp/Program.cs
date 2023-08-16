@@ -12,6 +12,7 @@ builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
 builder.Services.ResolveDependencyInjection();
 builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.ConfigureSwaggerAuth();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
