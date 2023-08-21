@@ -35,7 +35,6 @@ namespace ContactBookWebApp.Infrastructure.Migrations
                     PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -187,8 +186,8 @@ namespace ContactBookWebApp.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "89865116-9de3-41b2-aa2b-b031ff1f7239", null, "Admin", "ADMIN" },
-                    { "9dd0eafb-5e05-4452-91ea-5093e16f08ce", null, "User", "USER" }
+                    { "71d51d49-5340-457b-a732-c4cf4f745fb9", null, "User", "USER" },
+                    { "fc05b889-0fd5-4036-8ff6-0368ab02ebb3", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(

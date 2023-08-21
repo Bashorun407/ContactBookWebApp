@@ -1,4 +1,4 @@
-using ContactBookWebApp.Application;
+using ContactBookWebApp.Application.Commons;
 using ContactBookWebApp.Extensions;
 using ContactBookWebApp.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;

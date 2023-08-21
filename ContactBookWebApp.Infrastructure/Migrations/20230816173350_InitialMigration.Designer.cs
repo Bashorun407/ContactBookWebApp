@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContactBookWebApp.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230816143821_InitialMigration")]
+    [Migration("20230816173350_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -67,10 +67,6 @@ namespace ContactBookWebApp.Infrastructure.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -176,13 +172,13 @@ namespace ContactBookWebApp.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "89865116-9de3-41b2-aa2b-b031ff1f7239",
+                            Id = "fc05b889-0fd5-4036-8ff6-0368ab02ebb3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "9dd0eafb-5e05-4452-91ea-5093e16f08ce",
+                            Id = "71d51d49-5340-457b-a732-c4cf4f745fb9",
                             Name = "User",
                             NormalizedName = "USER"
                         });

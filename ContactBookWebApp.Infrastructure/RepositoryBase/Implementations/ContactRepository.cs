@@ -23,9 +23,9 @@ namespace ContactBookWebApp.Infrastructure.RepositoryBase.Implementations
         }
         public async Task<PagedList<Contact>> GetAllContacts(ContactRequestInputParameter parameter)
         {
-            var result = await _context.Skip((parameter.PageNumber - 1) * parameter.PageSize).Take(parameter.PageSize)
+            var result = await _contacts.Skip((parameter.PageNumber - 1) * parameter.PageSize).Take(parameter.PageSize)
             .ToListAsync();
-            var count = await _context.CountAsync();
+            var count = await _contacts.CountAsync();
             return new PagedList<Contact>(result, count, parameter.PageNumber, parameter.PageSize);
 
         }
